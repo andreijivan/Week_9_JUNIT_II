@@ -13,6 +13,7 @@ public class StatisticsRepository {
 
 
     public StatisticsRepository(Calculator calculator) {
+
         this.calculator = calculator;
     }
 
@@ -41,7 +42,6 @@ public class StatisticsRepository {
                 logger.log(Level.DEBUG,"Fastest execution time is made in " + mapLine.getKey().toUpperCase() + " and is done in " + fastestTime + " nanoseconds");
             }
         }
-
         return fastestTime;
     }
 

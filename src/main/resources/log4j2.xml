@@ -4,6 +4,7 @@
     <Property name="log-path">target</Property>
   </Properties>
   <Appenders>
+
     <RollingFile name="RollingFileInfo" fileName="${log-path}/exceptions-info.log"
                  filePattern="${log-path}/storageinfo-%d{yyyy-MM-dd}-%i.log" >
       <PatternLayout>
