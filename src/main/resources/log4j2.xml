@@ -51,7 +51,7 @@
   </Appenders>
   <Loggers>
     <Root level="debug" additivity="false">
-      <AppenderRef ref="RollingFileInfo" level="debug"/>
+      <AppenderRef ref="RollingFileInfo" level="info"/>
       <AppenderRef ref="RollingFileError" level="error"/>
       <AppenderRef ref="RollingFileStatistics" level="debug"/>
     </Root>

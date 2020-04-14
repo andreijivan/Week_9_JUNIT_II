@@ -47,19 +47,19 @@ public class Calculator {
 
         switch (resultUnit.toLowerCase()) {
             case "mm":
-                logger.log(Level.DEBUG,copyOutput + " final result in " + resultUnit.toUpperCase() + " equals " + finalResult(variables, operands, "mm"));
+                logger.log(Level.INFO,copyOutput + " final result in " + resultUnit.toUpperCase() + " equals " + finalResult(variables, operands, "mm"));
                 return finalResult(variables, operands, "mm");
             case "cm":
-                logger.log(Level.DEBUG,copyOutput + " final result in " + resultUnit.toUpperCase() + " equals " + finalResult(variables, operands, "cm"));
+                logger.log(Level.INFO,copyOutput + " final result in " + resultUnit.toUpperCase() + " equals " + finalResult(variables, operands, "cm"));
                 return finalResult(variables, operands, "cm");
             case "dm":
-                logger.log(Level.DEBUG,copyOutput + " final result in " + resultUnit.toUpperCase() + " equals " + finalResult(variables, operands, "dm"));
+                logger.log(Level.INFO,copyOutput + " final result in " + resultUnit.toUpperCase() + " equals " + finalResult(variables, operands, "dm"));
                 return finalResult(variables, operands, "dm");
             case "m":
-                logger.log(Level.DEBUG,copyOutput + " final result in " + resultUnit.toUpperCase() + " equals " + finalResult(variables, operands, "m"));
+                logger.log(Level.INFO,copyOutput + " final result in " + resultUnit.toUpperCase() + " equals " + finalResult(variables, operands, "m"));
                 return finalResult(variables, operands, "m");
             case "km":
-                logger.log(Level.DEBUG,copyOutput + " final result in " + resultUnit.toUpperCase() + " equals " + finalResult(variables, operands, "km"));
+                logger.log(Level.INFO,copyOutput + " final result in " + resultUnit.toUpperCase() + " equals " + finalResult(variables, operands, "km"));
                 return finalResult(variables, operands, "km");
             default:
                 System.out.println("Wrong result unit.");
