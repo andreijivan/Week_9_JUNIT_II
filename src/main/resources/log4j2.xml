@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="DEBUG">
+  <Properties>
+    <Property name="log-path">target</Property>
+  </Properties>
+  <Appenders>
+    <RollingFile name="RollingFileInfo" fileName="${log-path}/exceptions-info.log"
+                 filePattern="${log-path}/storageinfo-%d{yyyy-MM-dd}-%i.log" >
+      <PatternLayout>
+        <pattern>%d{dd/MMM/yyyy HH:mm:ss,SSS}- %c{1}: %m%n</pattern>
+      </PatternLayout>
+      <Policies>
+        <SizeBasedTriggeringPolicy size="1 KB" />
+      </Policies>
+      <DefaultRolloverStrategy max="4"/>
+      <Filters>
+        <!-- Now deny warn, error and fatal messages -->
+        <ThresholdFilter level="warn"  onMatch="DENY"   onMismatch="NEUTRAL"/>
+        <ThresholdFilter level="error" onMatch="DENY"   onMismatch="NEUTRAL"/>
+        <ThresholdFilter level="fatal" onMatch="DENY"   onMismatch="NEUTRAL"/>
+      </Filters>
+    </RollingFile>
+    <RollingFile name="RollingFileStatistics" fileName="${log-path}/exceptions-statistics.log"
+                 filePattern="${log-path}/storageinfo-%d{yyyy-MM-dd}-%i.log" >
+      <PatternLayout>
+        <pattern>%d{dd/MMM/yyyy HH:mm:ss,SSS}- %c{1}: %m%n</pattern>
+      </PatternLayout>
+      <Policies>
+        <SizeBasedTriggeringPolicy size="1 KB" />
+      </Policies>
+      <DefaultRolloverStrategy max="4"/>
+      <Filters>
+        <!-- Now deny warn, error and fatal messages -->
+        <ThresholdFilter level="warn"  onMatch="DENY"   onMismatch="NEUTRAL"/>
+        <ThresholdFilter level="error" onMatch="DENY"   onMismatch="NEUTRAL"/>
+        <ThresholdFilter level="fatal" onMatch="DENY"   onMismatch="NEUTRAL"/>
+      </Filters>
+    </RollingFile>
+
+    <RollingFile name="RollingFileError" fileName="${log-path}/exceptions-error.log"
+                 filePattern="${log-path}/storageerror-%d{yyyy-MM-dd}-%i.log" >
+      <PatternLayout>
+        <pattern>%d{dd/MMM/yyyy HH:mm:ss,SSS}- %c{1}: %m%n</pattern>
+      </PatternLayout>
+      <Policies>
+        <SizeBasedTriggeringPolicy size="1 KB" />
+      </Policies>
+      <DefaultRolloverStrategy max="4"/>
+    </RollingFile>
+  </Appenders>
+  <Loggers>
+    <Root level="debug" additivity="false">
+      <AppenderRef ref="RollingFileInfo" level="debug"/>
+      <AppenderRef ref="RollingFileError" level="error"/>
+      <AppenderRef ref="RollingFileStatistics" level="debug"/>
+    </Root>
+  </Loggers>
+</Configuration>
